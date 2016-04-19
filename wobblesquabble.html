@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="./phaser.js"></script>
+	<script src="socket.io.js"></script>
+
+</head>
+<body>
+<script>
+	
+	var game = new Phaser.Game(800, 600, Phaser.AUTO, 'testgame', 
+							{	preload: preload, 
+								create: create, 
+								update: update
+							});
+
+	function preload() {
+		game.load.image('tileset' , 'map/combinedTiles.png');
+		game.load.tilemap('map', 'map/mapJSON.json', null, Phaser.Tilemap.TILED_JSON);
+	}
+
+	function create() {
+			map = game.add.tilemap('map');
+			map.addTilesetImage('tileset', 'tileset');
+	}
+
+	function update(){
+
+	}
+
+
+</script>
+
+
+
+</body>
+</html>
